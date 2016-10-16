@@ -1,0 +1,231 @@
+include mixins
+doctype html
+html(lang='ru')
+    +dev_head('Inforumpack главная')
+
+    body
+        .wrapper
+            //-.rect_1024
+
+            .preloader_holder.preloaderHolder
+                .preloader
+                    .preloader__content
+                        .wave
+                            - for (var i = 0; i < 5; i++)
+                                span.wave__object
+
+            video#bgvid.bgvid(poster='i/video_poster.jpg', loop='loop', preload='auto')
+                source(src='movie/rosupack_background.webm', type='video/webm')
+                source(src='movie/rosupack_background.mp4', type='video/mp4')
+
+            .bsImg.bs_slides
+
+            .video_overlay
+
+            .fullscreen_video_holder.fullscreenBlock
+                #fs_video.fullscreen_video_wrapper
+                    iframe(width="560" height="315" src='https://www.youtube.com/embed/p01um_ZTdzc?enablejsapi=1', frameborder='0', allowfullscreen)
+                .fullscreen_close.closeFullscreen.i-close
+
+            div.main_content.pageSlider
+                .section.slide_section.firstPage: .section_table: .section_cell
+                    .section_inner
+                        .slide_block
+                            .slide_title.fz_28.mb_80.mt_50.fadeMeUp.mob_mt_0.mob_mb_50 21-я международная  <br> выставка
+                            .slide_title.fz_90.mb_40.fadeMeUp.mob_lh_1.mob_mb_70 Rosupack 2016
+                            .slide_connector.i-mouse
+                                .connector.connector_bottom
+
+                            .mob_scrolldown.i-down.cb.fadeMeUp2.scrollFirstPage
+
+                .section.slide_section.emptyPage.show_connector
+                    .section_inner
+                        .slide_block
+                            .slide_connector
+                                .connector.connector_top
+                                .connector.connector_bottom
+
+                .section.slide_section.secondPage.show_connector.slideSection(data-bs='i/photo_bg.jpg')
+                    .slide: .section_table: .section_cell
+                        .section_inner
+                            .slide_block
+                                .slide_connector.mb_60
+                                    .connector.connector_top
+                                .slide_links_holder.mb_-85
+                                    .slide_info_box.fadeMeUp
+                                        p Фотографий 1452
+                                    .slide_link_w.fadeMeUp
+                                        a.slide_link.mb_50.toggleGallery(href='#')
+                                            .slide_title.fz_28.mb_15.mob_fz_18.mob_mb_0 Смотреть  <br>    на сайте
+                                            p открыть галерею для просмотра фотографий
+                                    .slide_link_w.cb.fadeMeUp
+                                        a.slide_link.mb_50(href='#')
+                                            .slide_title.fz_28.mb_15.mob_fz_18.mob_mb_0 Скачать  <br> все фото
+                                            p Скачать архив с фотографиями (56 мб.)
+
+                                    .slide_link_w.fadeMeUp2.slide_link_w_mob_spacer
+                                        .slide_title.fz_60.mb_40.lh_1 Rosupack  <br>  2016  <br> фото
+                                        .slide_connector
+                                            .connector.connector_bottom
+
+                    .slide.noFP: .section_table: .section_cell
+                        .section_inner
+                            .slide_block.mob_no_padd
+                                .slide_connector.mb_60
+                                    .connector.connector_top
+                                .slide_links_holder.mb_40.mob_mb_10
+                                    .slide_info_box.fadeMeUp.mob_left
+                                        p.toggleGallery.toggle_gallery Венуться назад
+
+                                    .slide_link_w.fadeMeUp2
+                                        .slide_title.fz_60.lh_1.mob_fz_32
+                                            | Фотогалерея  <br> Rosupack 
+                                            span.dt_hidden  <br> 
+                                            |  2016
+
+                                    .slide_link_w.fadeMeUp2.slide_link_w_r.text_right.cb.slide_link_row_up
+                                        p Фотографий 1452
+
+                                .slide_links_holder.clearfix
+                                    .slide_info_box.fadeMeUp.mob_gallery_controls
+                                        .gallery_slide_controls
+                                            .gallery_control#gallery_right.i-right
+                                            .gallery_control#gallery_left.i-left
+
+                                            a.slide_link.gallery_download_link(href='#')
+                                                .slide_title.fz_28.mb_15 Скачать<br>все фото
+                                                p Скачать архив с фотографиями (56 мб.)
+
+
+                                    .slide_gallery_holder: .slide_gallery_w.swiper-container.gallerySlider
+                                        ul.slides_list.swiper-wrapper
+                                            +loop_while(1)
+                                                li.swiper-slide
+                                                    .gallery_slide_unit
+                                                        a.gallery_slide(class="fancybox" href="i/001-IMG_3425-5000.jpg" data-fancybox-group="gallery")
+                                                                img(src='i/001-IMG_3425-5000.jpg')
+                                                        .gallery_slide_info
+                                                            .gallery_slide_counter
+                                                                span.i-twitter.slide_counter_icon
+                                                                span.fz_11 135K
+                                                            .gallery_slide_counter
+                                                                span.i-vk.slide_counter_icon
+                                                                span.fz_11 135K
+                                                                
+                                                li.swiper-slide
+                                                    .gallery_slide_unit
+                                                        a.gallery_slide(class="fancybox" href="i/001-IMG_4041-5000.jpg" data-fancybox-group="gallery")
+                                                                img(src='i/001-IMG_4041-5000.jpg')
+                                                        .gallery_slide_info
+                                                            .gallery_slide_counter
+                                                                span.i-twitter.slide_counter_icon
+                                                                span.fz_11 135K
+                                                            .gallery_slide_counter
+                                                                span.i-vk.slide_counter_icon
+                                                                span.fz_11 135K
+                                                                
+                                                li.swiper-slide
+                                                    .gallery_slide_unit
+                                                        a.gallery_slide(class="fancybox" href="i/001-IMG_4084-5000.jpg" data-fancybox-group="gallery")
+                                                                img(src='i/001-IMG_4084-5000.jpg')
+                                                        .gallery_slide_info
+                                                            .gallery_slide_counter
+                                                                span.i-twitter.slide_counter_icon
+                                                                span.fz_11 135K
+                                                            .gallery_slide_counter
+                                                                span.i-vk.slide_counter_icon
+                                                                span.fz_11 135K
+                                                                
+                                                li.swiper-slide
+                                                    .gallery_slide_unit
+                                                        a.gallery_slide(class="fancybox" href="i/002-IMG_4045-5000.jpg" data-fancybox-group="gallery")
+                                                                img(src='i/002-IMG_4045-5000.jpg')
+                                                        .gallery_slide_info
+                                                            .gallery_slide_counter
+                                                                span.i-twitter.slide_counter_icon
+                                                                span.fz_11 135K
+                                                            .gallery_slide_counter
+                                                                span.i-vk.slide_counter_icon
+                                                                span.fz_11 135K
+                                                                
+                                                li.swiper-slide
+                                                    .gallery_slide_unit
+                                                        a.gallery_slide(class="fancybox" href="i/002-IMG_3427-5000.jpg" data-fancybox-group="gallery")
+                                                                img(src='i/002-IMG_3427-5000.jpg')
+                                                        .gallery_slide_info
+                                                            .gallery_slide_counter
+                                                                span.i-twitter.slide_counter_icon
+                                                                span.fz_11 135K
+                                                            .gallery_slide_counter
+                                                                span.i-vk.slide_counter_icon
+                                                                span.fz_11 135K
+                                                                
+                                                                
+                                                                
+
+                                    .slide_link_w.cb
+
+                                    .slide_link_w.fadeMeUp2
+                                        .slide_connector
+                                            .connector.connector_bottom
+
+                .section.slide_section.emptyPage.show_connector
+                    .section_inner
+                        .slide_block
+                            .slide_links_holder
+                                .slide_link_w
+                                .slide_link_w
+                                    .slide_connector
+                                        .connector.connector_top
+                                        .connector.connector_bottom
+
+                .section.slide_section.thirdPage.show_connector(data-bs='i/video_bg.jpg'): .section_table: .section_cell
+                    .section_inner
+                        .slide_block
+                            .slide_links_holder.mb_40
+
+                                .slide_link_w &nbsp;
+                                .slide_link_w
+                                    .slide_connector.mb_60
+                                        .connector.connector_top
+                            .slide_links_holder.mb_40.mt_-60
+                                .slide_info_box.fadeMeUp
+                                    p.mt_10 7:56
+                                .slide_link_w.cb.fadeMeUp
+                                    a.play_btn.openVideo(href='#')
+
+                                .slide_link_w.slide_link_w_mob_spacer.mob_row_rotator
+                                    .mob_row_footer: .slide_title.fz_60.mb_30.mob_mb_10.mt_10.lh_1.fadeMeUp Rosupack  <br>  2016  <br> Видео
+                                    .mob_row_header: p.fadeMeUp2 Посмотрите видеосюжет  <br> о  выставке
+                            .slide_connector.fadeMeUp2
+                                .connector.connector_bottom
+
+                .section.slide_section.emptyPage.show_connector
+                    .section_inner
+                        .slide_block
+                            .slide_connector
+                                .connector.connector_top
+                                .connector.connector_bottom
+
+                .section.slide_section.forthPage.show_connector(data-bs='i/about_bg.jpg'): .section_table: .section_cell
+                    .section_inner
+                        .slide_block
+                            .slide_connector.mb_75
+                                .connector.connector_top
+                            .slide_title.fz_60.mb_30.lh_1.fadeMeUp О выставке
+                            .about_block.fadeMeUp2
+                                p Не так давно закончилась самое значимое и масштабное мероприятие в упаковочной промышленности для России и Восточной Европы – 21-й международная выставка упаковочной индустрии RosUpack-2016. 
+
+                                p Для нас это был первый опыт участия в таком качестве и составе под брендом «ИнформУпак». 
+
+                                p Конечно, в первую очередь, мы хотим поблагодарить организаторов выставки – Группу компаний ITE  за предоставленную возможность, а также всех, кто принял участие в RosUpack, и в качестве экспонентов, и в качестве посетителей. Благодаря этим людям, в павильоне №1 МВЦ «Крокус Экспо» получилось создать такую неповторимую атмосферу, почувствовать, что все мы работаем над общим делом. Такие мероприятия вдохновляют на дальнейшую деятельность, и не только нас.  
+
+                                p Чтобы передать дух и настроение выставки мы подготовили фото- и видеоотчет. Кстати, Вы можете отметить себя и своих знакомых на фотографиях.  
+
+                                p Мы будем рады услышать Вас! Оставьте отзыв или поделитесь впечатлением о выставке в комментариях. Ваш голос нам не просто важен, нам по-настоящему интересно, как выставка RosUpack-2016 прошла именно для Вас.  
+
+
+            +header()
+
+            +footer()
+            

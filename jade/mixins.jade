@@ -1,0 +1,64 @@
+mixin dev_head(page_title)
+    head
+        title=page_title
+        | <!-- saved from url=(0014)about:internet -->
+        meta(charset='utf-8')
+        meta(name='viewport', content="width=device-width, initial-scale=1.0")
+        meta(name="SKYPE_TOOLBAR", content="SKYPE_TOOLBAR_PARSER_COMPATIBLE")
+        meta(name="apple-mobile-web-app-capable", content="yes")
+        meta(name="format-detection", content="telephone=no")
+        link(rel='stylesheet', href='styles/main_global.css', media='all')
+
+        script(src='js/jquery1.10.js')
+        script(src='js/swiper.js')
+        script(src='js/jquery.backstretch.js')
+        script(src='js/jquery.fullPage.js')
+        script(src='js/jquery.fancybox.js')
+        script(src='js/jquery.mousewheel-3.0.6.pack.js')
+        script(src='js/script.js')
+
+
+mixin loop_while(counter)
+    -i=0;
+    while i < counter
+        -i++;
+        block
+
+mixin header()
+    #header_.header
+        .section_inner.clearfix
+            .logo_block
+                a.logo(href='#')
+                    img(src='i/logo.svg')
+
+            ul.partners_block
+                li
+                    a.partner_link(href='#')
+                        img(src='i/rosupack_logo.svg')
+                li
+                    a.partner_link(href='#')
+                        img(src='i/ite_logo.svg')
+    
+mixin footer()
+    #footer_.footer
+        .section_inner.clearfix
+            .footer_menu
+                li
+                    a.f_link(href='#') Eng
+                li
+                    a.f_link(href='#') О выставке
+                    
+            .copyright © 2016 «Informupack.ru»  <br> Все права защищены.
+            ul.footer_sh
+                li
+                    a.sh_link.sh_link_t(href='#')
+                li
+                    a.sh_link.sh_link_v(href='#')
+                li
+                    a.sh_link.sh_link_y(href='#')
+                li
+                    a.sh_link.sh_link_i(href='#')
+
+
+
+
